@@ -1,0 +1,177 @@
+# *Lambda Functions*
+
+- In Python, a *lambda function* is a one-line shorthand for function.
+
+```python
+add_two = lambda my_input: my_input + 2
+```
+
+- So, this code:
+
+```python
+print(add_two(3))
+print(add_two(100))
+print(add_two(-2))
+```
+
+```python
+# Output:
+>>> 5
+>>> 102
+>>> 0
+```
+
+- Let’s break this syntax down:
+    - The function is stored in a variable called **`add_two`**
+    - **`lambda`** declares that this is a lambda function (if you are familiar with normal Python functions, this is similar to how we use **`def`** to declare a function)
+    - **`my_input`** is what we call the input we are passing into **`add_two`**
+    - We are returning **`my_input`** plus 2 (with normal Python functions, we use the keyword **`return`**)
+- Other examples:
+
+```python
+is_substring = lambda my_string: my_string in "This is the master string"
+```
+
+```python
+print(is_substring('I'))
+print(is_substring('am'))
+print(is_substring('the'))
+print(is_substring('master'))
+```
+
+```python
+>>> False
+>>> False
+>>> True
+>>> True
+```
+
+- We can do this using an *if statement* in our lambda function, with syntax that looks like:
+
+```r
+<WHAT TO RETURN IF STATEMENT IS TRUE> if <IF STATEMENT> else <WHAT TO RETURN IF STATEMENT IS FALSE>
+```
+
+- So, this is what our **`check_if_A_grade`** function might look like:
+
+```python
+check_if_A_grade = lambda grade: 'Got an A!' if grade >= 90 else 'Did not get an A...'
+```
+
+```python
+check_if_A_grade = lambda grade: 'Got an A!' if grade >= 90 else 'Did not get an A...'
+```
+
+## Contains A
+
+- In Python, you can check if a string contains a substring by using the keyword `in`.
+
+```python
+return "I" in "Team"  # would return False, as there is no "I" in "Team"
+return "I" in "I love Python"  # returns True, because there is an "I" in "I love Python"
+```
+
+## Multiple of Three
+
+- In general, using `%n` will tell you if an integer is a multiple of `n`. If the result is `0`, the integer is a multiple of `n` (since there is no remainder in the division):
+
+```python
+multiple_of_three = lambda num: 'multiple of three' if num % 3 == 0 else 'not a multiple'
+print(multiple_of_three(9)) # multiple of three
+print(multiple_of_three(10)) # not a multiple 
+```
+
+## Long String
+
+- To find the number of characters in a string, we use `len`.
+
+```python
+long_string = lambda str: len(str) > 12
+print(long_string("short"))
+print(long_string("photosynthesis"))
+# Output:
+False
+True
+```
+
+## Ends With A
+
+- You can get a character of a string `string_name` by using the syntax `string_name[index]`.
+
+```python
+ends_in_a = lambda str: str[-1] == 'a'
+print(ends_in_a("data"))
+print(ends_in_a("aardvark"))
+# Output:
+True
+False
+```
+
+## Double Or Zero
+
+```python
+double_or_zero = lambda num: num*2 if num > 10 else  0
+print(double_or_zero(15)) # 30
+print(double_or_zero(5)) # 0
+
+```
+
+## Even / Odd
+
+- In Python, `%`, or the *modulo* operator, returns the remainder after division.
+
+```python
+even_or_odd = lambda num:'even' if num%2 == 0 else 'odd'
+print(even_or_odd(10)) # even
+print(even_or_odd(5)) # odd
+```
+
+## Movie Rating
+
+```python
+rate_movie = lambda rating: 'I liked this movie' if rating > 8.5 else 'This movie was not very good'
+print(rate_movie(9.2)) # I liked this movie
+print(rate_movie(7.2)) # This movie was not very good
+```
+
+## One’s Place
+
+- You can use the modulo operator (`%`) with `10` to find the ones’ place of an integer.
+
+```python
+ones_place = lambda num: num % 10
+print(ones_place(123)) # 3
+print(ones_place(4)) # 4
+```
+
+## Double Square
+
+- You can find the square of a number by multiplying it by itself, or by using the exponential operator `**`:
+
+```python
+eight_squared = 8*8
+#The value of eight_squared is now 64
+seven_squared = 7**2
+#The value of seven_squared is now 49
+```
+
+```python
+# The function should return twice the square of num.
+double_square = lambda num: num*num*2
+
+print(double_square(5)) # 50
+print(double_square(3)) # 18
+```
+
+## Add Random
+
+- `random.randint(a,b)` will return an integer between `a` and `b` (inclusive).
+- `random.randint(5, 8)` could return any integer between `5` and `8` including both `5` and `8`.
+- `random.randint(0, 100)` could return any integer between `0` and `100` including both `0` and `100`.
+
+```python
+import random
+add_random = lambda num: num + random.randint(1, 10)
+print(add_random(5))
+print(add_random(100))
+```
